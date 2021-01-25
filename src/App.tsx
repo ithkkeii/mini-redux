@@ -15,7 +15,16 @@ function App() {
         <span>Counter</span>
         <p>{(store as any).value}</p>
         <div>
-          <button onClick={() => dispatch({ type: counterActions.increment })}>
+          <button
+            onClick={() => {
+              dispatch({ type: counterActions.increment });
+              dispatch({ type: counterActions.increment });
+              dispatch({ type: counterActions.increment });
+              dispatch({ type: counterActions.increment });
+              dispatch({ type: counterActions.increment });
+              dispatch({ type: counterActions.increment });
+            }}
+          >
             Increment
           </button>
           <button onClick={() => dispatch({ type: counterActions.decrement })}>

@@ -5,16 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createStore, StoreProvider } from "./mini-redux";
 import { counterReducer } from "./counter/reducer";
-import { counterActions } from "./counter";
 
 export const store = createStore(counterReducer);
-
-store.dispatch({ type: counterActions.increment });
-store.dispatch({ type: counterActions.increment });
-store.dispatch({ type: counterActions.increment });
-store.dispatch({ type: counterActions.increment });
-store.dispatch({ type: counterActions.increment });
-console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>

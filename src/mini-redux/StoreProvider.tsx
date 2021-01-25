@@ -12,6 +12,8 @@ const StoreProvider: React.FC<Props> = (props) => {
 
   const [reduxStore, setReduxStore] = useState(store.getState());
 
+  store.subscribe(() => setReduxStore(store.getState()));
+
   return (
     <StoreContext.Provider value={reduxStore}>{children}</StoreContext.Provider>
   );
