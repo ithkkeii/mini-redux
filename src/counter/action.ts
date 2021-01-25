@@ -1,2 +1,7 @@
-export const increment = "counter/increment";
-export const decrement = "counter/decrement";
+const increment = "counter/increment";
+const decrement = "counter/decrement";
+
+export const counterActions = {
+  increment,
+  decrement,
+} as const;

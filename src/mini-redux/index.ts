@@ -1,1 +1,1 @@
-export const x = 10;
+export { createStore } from "./create-store";
