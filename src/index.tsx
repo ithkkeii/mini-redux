@@ -3,23 +3,24 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "./mini-redux";
+import { createStore, StoreProvider } from "./mini-redux";
 import { counterReducer } from "./counter/reducer";
 import { counterActions } from "./counter";
 
-const store = createStore(counterReducer);
-console.log(store.currentState);
+export const store = createStore(counterReducer);
 
 store.dispatch({ type: counterActions.increment });
 store.dispatch({ type: counterActions.increment });
 store.dispatch({ type: counterActions.increment });
 store.dispatch({ type: counterActions.increment });
 store.dispatch({ type: counterActions.increment });
-console.log(store.currentState);
+console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider store={store}>
+      <App />
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
